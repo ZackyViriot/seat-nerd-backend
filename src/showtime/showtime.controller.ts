@@ -7,6 +7,12 @@ import { PurchaseTicketDto } from './dto/purchase-ticket.dto';
 export class ShowtimeController {
     constructor(private readonly showtimeService: ShowtimeService) {}
 
+    @Post()
+    create(@Body() createShowtimeDto: CreateShowtimeDto) {
+        return this.showtimeService.create(createShowtimeDto);
+    }
+
+
     @Get()
     findAll() {
         return this.showtimeService.findAll();
